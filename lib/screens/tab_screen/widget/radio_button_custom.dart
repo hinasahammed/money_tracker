@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:take_care/model/transaction_model.dart';
+
+import '../../../model/transactions_model.dart';
 
 ValueNotifier<TransactionType> selectedTransactionNotifier =
     ValueNotifier(TransactionType.income);
@@ -28,7 +29,7 @@ class RadioButtonCustom extends StatelessWidget {
                     return;
                   }
                   selectedTransactionNotifier.value = value;
-                  selectedTransactionNotifier.notifyListeners();
+                  // selectedTransactionNotifier.notifyListeners();
                 },
               ),
               Text(

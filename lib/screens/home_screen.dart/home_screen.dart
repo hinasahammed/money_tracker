@@ -13,9 +13,7 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Expanded(
-          child: MoneyList(),
-        ),
+        Expanded(child: MoneyList()),
       ],
     );
   }
