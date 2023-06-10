@@ -6,7 +6,7 @@ enum TransactionType {
   @HiveField(0)
   income,
 
-@HiveField(1)
+  @HiveField(1)
   expense,
 }
 
@@ -15,13 +15,13 @@ enum CategoryType {
   @HiveField(0)
   food,
 
-@HiveField(1)
+  @HiveField(1)
   transport,
 
-@HiveField(2)
+  @HiveField(2)
   rent,
 
-@HiveField(3)
+  @HiveField(3)
   etc,
 }
 
@@ -30,19 +30,19 @@ class TransactionsModel extends HiveObject {
   @HiveField(0)
   final String id;
 
-@HiveField(1)
-  final String title;
+  @HiveField(1)
+  String title;
 
-@HiveField(2)
-  final String amount;
+  @HiveField(2)
+  String amount;
 
-@HiveField(3)
-  final DateTime date;
+  @HiveField(3)
+  DateTime date;
 
-@HiveField(4)
+  @HiveField(4)
   final TransactionType transactionType;
 
-@HiveField(5)
+  @HiveField(5)
   final CategoryType categoryType;
 
   TransactionsModel({

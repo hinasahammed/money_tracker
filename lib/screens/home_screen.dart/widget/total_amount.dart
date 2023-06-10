@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import '../../../box/boxes.dart';
@@ -13,7 +12,21 @@ class TotalAmount extends StatelessWidget {
     return ValueListenableBuilder<Box<TransactionsModel>>(
       valueListenable: Boxes.getData().listenable(),
       builder: (context, box, _) {
-        var data = box.values.toList().cast<TransactionsModel>();
+        var expenseData = box.values
+            .where((type) => type.transactionType == TransactionType.expense)
+            .toList()
+            .cast<TransactionsModel>();
+        final totalExpense = expenseData
+            .map((expense) => int.parse(expense.amount))
+            .reduce((a, b) => a + b);
+
+        var incomeData = box.values
+            .where((type) => type.transactionType == TransactionType.income)
+            .toList()
+            .cast<TransactionsModel>();
+        final totalIncome = incomeData
+            .map((income) => int.parse(income.amount))
+            .reduce((a, b) => a + b);
         return Card(
           child: Container(
             padding: const EdgeInsets.all(20),
@@ -39,7 +52,7 @@ class TotalAmount extends StatelessWidget {
                                   ),
                         ),
                         Text(
-                          '₹${data.length.toString()}',
+                          '₹${totalIncome.toString()}',
                           style:
                               Theme.of(context).textTheme.bodyMedium!.copyWith(
                                     color: Theme.of(context)
@@ -63,7 +76,7 @@ class TotalAmount extends StatelessWidget {
                                   ),
                         ),
                         Text(
-                          '₹300',
+                          '₹${totalExpense.toString()}',
                           style:
                               Theme.of(context).textTheme.bodyMedium!.copyWith(
                                     color: Theme.of(context)

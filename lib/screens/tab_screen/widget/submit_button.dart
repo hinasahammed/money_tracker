@@ -48,6 +48,5 @@ class SubmitButton extends StatelessWidget {
     final box = Boxes.getData();
     box.add(data);
     data.save();
-    print(box);
   }
 }
