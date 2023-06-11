@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TotalAmount(),
+         TotalAmount(),
         const SizedBox(
           height: 10,
         ),

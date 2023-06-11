@@ -6,7 +6,6 @@ import '../../../model/transactions_model.dart';
 
 class TotalAmount extends StatelessWidget {
   const TotalAmount({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<Box<TransactionsModel>>(
@@ -16,17 +15,31 @@ class TotalAmount extends StatelessWidget {
             .where((type) => type.transactionType == TransactionType.expense)
             .toList()
             .cast<TransactionsModel>();
-        final totalExpense = expenseData
-            .map((expense) => int.parse(expense.amount))
-            .reduce((a, b) => a + b);
+
+        double totalExpense = 0.0;
+
+        for (var transaction in expenseData) {
+          final amountString = transaction.amount;
+          final amount = double.tryParse(amountString);
+          if (amount != null) {
+            totalExpense += amount;
+          }
+        }
 
         var incomeData = box.values
             .where((type) => type.transactionType == TransactionType.income)
             .toList()
             .cast<TransactionsModel>();
-        final totalIncome = incomeData
-            .map((income) => int.parse(income.amount))
-            .reduce((a, b) => a + b);
+
+        double totalIncome = 0.0;
+
+        for (var transaction in incomeData) {
+          final amountString = transaction.amount;
+          final amount = double.tryParse(amountString);
+          if (amount != null) {
+            totalIncome += amount;
+          }
+        }
         return Card(
           child: Container(
             padding: const EdgeInsets.all(20),

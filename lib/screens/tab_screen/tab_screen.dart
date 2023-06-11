@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:take_care/screens/analytics_screen/analytics_screen.dart';
-import 'package:take_care/screens/category_screen/category_screen.dart';
 import 'package:take_care/screens/home_screen.dart/home_screen.dart';
 import 'package:take_care/screens/tab_screen/widget/add_amount_sheet.dart';
 
@@ -22,7 +21,6 @@ class _TabScreenState extends State<TabScreen> {
   final _pages = [
     const HomeScreen(),
     const AnalyticsScreen(),
-    const CategoryScreen(),
   ];
 
   @override
@@ -44,8 +42,6 @@ class _TabScreenState extends State<TabScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.analytics), label: 'Analytics'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.category), label: 'Category'),
         ],
         onTap: _selectIndex,
         currentIndex: currentindex,
