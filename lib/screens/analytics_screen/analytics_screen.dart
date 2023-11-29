@@ -36,7 +36,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen>
           ],
         ),
         Expanded(
-          child: TabBarView(controller: _tabController, children: [
+          child: TabBarView(controller: _tabController, children: const [
             SpentAnalytics(),
             IncomeAnalytics(),
           ]),
