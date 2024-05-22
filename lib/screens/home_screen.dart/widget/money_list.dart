@@ -22,7 +22,7 @@ class MoneyList extends StatelessWidget {
               child: Text(
             'No transaction, try to add',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
           ));
         } else {

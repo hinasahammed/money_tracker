@@ -51,7 +51,7 @@ class _AddAmountSheetState extends State<AddAmountSheet> {
               Text(
                 'Enter your Transaction',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground),
+                    color: Theme.of(context).colorScheme.onSurface),
               ),
               const SizedBox(
                 height: 20,
@@ -108,7 +108,7 @@ class _AddAmountSheetState extends State<AddAmountSheet> {
                                   .copyWith(
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground,
+                                        .onSurface,
                                   ),
                             ),
                           ),
@@ -136,7 +136,7 @@ class _AddAmountSheetState extends State<AddAmountSheet> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                              color: Theme.of(context).colorScheme.onBackground,
+                              color: Theme.of(context).colorScheme.onSurface,
                             ),
                       ),
                       IconButton(

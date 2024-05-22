@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:take_care/main.dart';
 import 'package:take_care/screens/analytics_screen/widget/income_analytics.dart';
 import 'package:take_care/screens/analytics_screen/widget/spent_analytics.dart';
 
@@ -25,7 +26,9 @@ class _AnalyticsScreenState extends State<AnalyticsScreen>
       children: [
         TabBar(
           controller: _tabController,
-          labelStyle: Theme.of(context).textTheme.titleMedium,
+          labelStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: theme.colorScheme.onSurface,
+              ),
           tabs: const [
             Tab(
               text: 'Spent',

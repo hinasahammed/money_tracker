@@ -52,7 +52,7 @@ class _EditTransactionsState extends State<EditTransactions> {
               Text(
                 'Edit your Transaction',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground),
+                    color: Theme.of(context).colorScheme.onSurface),
               ),
               const SizedBox(
                 height: 20,
@@ -89,7 +89,7 @@ class _EditTransactionsState extends State<EditTransactions> {
                         ? 'Select Date'
                         : DateFormat.yMMMMd().format(_selectedDate!),
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.onBackground,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                   ),
                   IconButton(

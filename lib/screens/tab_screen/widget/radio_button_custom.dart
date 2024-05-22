@@ -35,7 +35,7 @@ class RadioButtonCustom extends StatelessWidget {
               Text(
                 title,
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                      color: Theme.of(context).colorScheme.onBackground,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
               )
             ],
